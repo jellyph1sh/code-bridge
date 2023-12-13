@@ -1,0 +1,9 @@
+<html>
+    <head>
+        @livewireStyles
+    </head>
+    <body>
+        <livewire:RandomNumberGenerator/>
+        @livewireScripts
+    </body>
+</html>

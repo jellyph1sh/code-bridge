@@ -1,4 +1,9 @@
 <div>
+    <style>
+        .min {
+            color: blue;
+        }
+    </style>
     <button type="button" wire:click="generateRandomNumber">Generate random number</button>
     <div class="min">
         <label for="min">Minimum number</label>
@@ -8,5 +13,12 @@
         <label for="max">Maximum number</label>
         <input id="max" type="number" value="{{ $max }}" wire:model="max">
     </div>
-    {{ $number }}
+    <p>{{ $number }}</p>
+    @if($errors->has('min'))
+        <span>{{ $errors->first('min') }}</span>
+    @endif
+    @if($errors->has('max'))
+        <span>{{ $errors->first('max') }}</span>
+    @endif
+    <p>{{ $error }}</p>
 </div>

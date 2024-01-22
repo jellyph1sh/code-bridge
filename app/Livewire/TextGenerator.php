@@ -9,16 +9,26 @@ use Livewire\Component;
 class TextGenerator extends Component
 {
 
-    public $input = "";
+    public $numberOfWord = "";
     public $result = "";
     public $error = "";
 
-    public function textGenerator($input)
+    public function textGenerator()
     {   
-        $fileContents = Storage::get('public/dico.txt');
-        $this->input = $input;
-        for ($i = 0; $i < $input; $i++) {
-            $this->result .= $fileContents[rand(0, strlen($fileContents))];
+        $this->validate([
+            'numberOfWord' => 'required|numeric|min:1|max:100',
+        ]);
+
+        $this->result = "";
+        $this->error = "";
+
+        $words = Storage::get('storage/app/public/dico.txt');
+        $words = explode("\n", $words);
+
+        $numberOfWord = $this->numberOfWord;
+
+        for ($i = 0; $i < $numberOfWord; $i++) {
+            $this->result .= $words[rand(0, count($words) - 1)] . " ";
         }
     }
 

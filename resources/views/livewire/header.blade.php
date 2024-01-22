@@ -1,4 +1,49 @@
 <div class ="box">
+  <style>
+      body, html {
+
+    font-family: 'Roboto', sans-serif;
+  }
+
+/* Header */
+  header {
+    background-color: #0f3e70;
+    color: rgb(255, 255, 255);
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  
+  .logo {
+    display: flex;
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 18%;
+  }
+  
+  .dropdown {
+    margin-right: 60%;
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    cursor: pointer;
+    background-color: rgb(113, 165, 233);
+    color: black;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+  }
+  
+  
+  .dropdown option {
+    background-color: rgb(113,165,233);
+    color: black;
+    padding: 15px;
+  }
+  </style>
      <header>
           <div class = "logo">
             Logo
@@ -11,3 +56,4 @@
           </select>
       </header>
 </div>
+

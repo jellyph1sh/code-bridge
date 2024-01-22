@@ -36,7 +36,7 @@ body, html {
 .selection_1,
 .selection_2 {
   border-radius: 5px;
-  margin-bottom: 10px; /* Espace entre le select et l'input */
+  margin-bottom: 10px;
 }
 
 .input_button_1,
@@ -73,19 +73,19 @@ body, html {
           <div class="input-group_1">
             <div class="select-container_1">
                 <select class="selection_1" name="base1" wire:model="base_1" selected="{{ $base_1 }}">
-                    <option value="2">Binary</option>
+                    <option value="2">Binaire</option>
                     <option value="8">Octal</option>
                     <option value="10">Decimal</option>
                     <option value="16">Hexadecimal</option>
                     <option value="64">Base64</option>
                 </select>
             </div>
-            <input class="input_button_1" type="text" name="number1" placeholder ="Input your number" wire:model="input" >
+            <input class="input_button_1" type="text" name="number1" placeholder ="Entrer votre nombre" wire:model="input" >
           </div>
           <div class="input-group_2">
             <div class="select-container_2">
                 <select class="selection_2" name="base2" wire:model="base_2" selected="{{ $base_2 }}">
-                    <option value="2">Binary</option>
+                    <option value="2">Binaire</option>
                     <option value="8">Octal</option>
                     <option value="10">Decimal</option>
                     <option value="16">Hexadecimal</option>
@@ -94,6 +94,6 @@ body, html {
             </div>
           </div>
           <input class="submit-btn" type="submit" value="Convert" wire:click="convert">
-          <input class="input_button_2" placeholder="Result" type="text" name="result" wire:model="result">
+          <input class="input_button_2" placeholder="Resultat" type="text" name="result" wire:model="result">
         </div>
     </div>

@@ -3,8 +3,9 @@
         @livewireStyles
     </head>
     <body>
-        Hello World!
-        <livewire:BinaryConverter />
+        <livewire:Header />
+        <livewire:Footer />
+        <livewire:TextGenerator />
         @livewireScripts
     </body>
 </html>

@@ -20,3 +20,11 @@ Route::get('/', function () {
 Route::get('/convert', function () {
     return view('convert');
 });
+
+Route::get('/text-generator', function () {
+    return view('text-generator');
+});
+
+Route::get('/random-number', function () {
+    return view('random-number');
+});

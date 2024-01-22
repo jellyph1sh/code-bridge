@@ -4,7 +4,6 @@
     </head>
     <body>
         <livewire:Header />
-        <livewire:BinaryConverter />
         <livewire:Footer />
         @livewireScripts
     </body>

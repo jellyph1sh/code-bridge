@@ -3,7 +3,9 @@
         @livewireStyles
     </head>
     <body>
-        Hello from Home!
+        <livewire:Header />
+        <livewire:BinaryConverter />
+        <livewire:Footer />
         @livewireScripts
     </body>
 </html>

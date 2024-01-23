@@ -1,0 +1,138 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+  }
+
+/* Header */
+  header {
+    background-color: #0f3e70;
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: auto;
+    margin-left: 18%;
+  }
+  
+  .dropdown {
+    margin-right: 60%;
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    cursor: pointer;
+    background-color: rgb(113, 165, 233);
+    color: black;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+  }
+  
+  
+  .dropdown option {
+    background-color: rgb(113,165,233);
+    color: black;
+    padding: 15px;
+  }
+
+/* End Header */  
+
+/* Main */
+
+.container {
+  width: 800px;
+  height: 600px;
+  border: 1px solid #000;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-group_1,
+.input-group_2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.selection_1,
+.selection_2 {
+  border-radius: 5px;
+  margin-bottom: 10px; /* Espace entre le select et l'input */
+}
+
+.input_button_1,
+.input_button_2 {
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  outline: none;  
+  transition: border-color 0.3s ease-in-out;
+}
+
+.input_button_1:focus,
+.input_button_2:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.submit-btn {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.submit-btn:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* End Main */
+
+/* Footer */
+
+body {
+    margin: 0;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  } 
+  
+.content {
+    flex: 1;
+    padding: 20px;
+    }
+
+footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 20px; 
+    text-align: center; 
+    bottom: 0;
+}
+
+/* End Footer */
+
+
+

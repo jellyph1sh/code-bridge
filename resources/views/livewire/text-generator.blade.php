@@ -73,6 +73,10 @@
             <input class="input_button_2" placeholder="Resultat" type="text" name="result" wire:model="result">
             {{ $error }}
         </div>
+        <div class="history">
+          @for ($i = 0; $i < count($history); $i++)
+            <li>{{ $history[$i] }}</li>
+          @endfor
+        </div>
     </div>
 </div>
-    

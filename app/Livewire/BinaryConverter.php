@@ -2,6 +2,8 @@
 
 namespace App\Livewire;
 
+use Illuminate\Support\Facades\Cookie;
+
 use Livewire\Component;
 
 class BinaryConverter extends Component
@@ -11,6 +13,7 @@ class BinaryConverter extends Component
     public $base_1 = 2;
     public $base_2 = 10;
     public $error = "";
+    public $history;
 
     public function base2($input, $base_2) 
     {   
@@ -130,29 +133,34 @@ class BinaryConverter extends Component
     public function convert()
     {   
         switch ($this->base_1) {
-            case 2: 
+            case 2:
                 $this -> result = $this->base2($this->input, $this->base_2);
                 $this->error = $this->result[1];
+                $this->AddToHistory('BINARY_HISTORY', $this->result[0]);
                 $this->result = $this->result[0];
                 break;
             case 8 :
                 $this->result = $this->base8($this->input, $this->base_2);
                 $this->error = $this->result[1];
+                $this->AddToHistory('BINARY_HISTORY', $this->result[0]);
                 $this->result = $this->result[0];
                 break;
             case 10 :
                 $this->result = $this->base10($this->input, $this->base_2);
                 $this->error = $this->result[1];
+                $this->AddToHistory('BINARY_HISTORY', $this->result[0]);
                 $this->result = $this->result[0];
                 break;
             case 16 :
                 $this->result = $this->base16($this->input, $this->base_2);
                 $this->error = $this->result[1];
+                $this->AddToHistory('BINARY_HISTORY', $this->result[0]);
                 $this->result = $this->result[0];
                 break;
             case 64 :
                 $this->result = $this->base64($this->input, $this->base_2);
                 $this->error = $this->result[1];
+                $this->AddToHistory('BINARY_HISTORY', $this->result[0]);
                 $this->result = $this->result[0];
                 break;
         }
@@ -160,6 +168,25 @@ class BinaryConverter extends Component
 
     public function render()
     {   
+        $this->history = $this->GetHistory('BINARY_HISTORY');
         return view('livewire.binary-converter');
     }
+
+    private function AddToHistory($cookieName, $element) {
+        $cookie = Cookie::get($cookieName);
+        $history = $element;
+        if (strlen($cookie) > 0) {
+            $history = $cookie . ";" . $element;
+        }
+        Cookie::queue(Cookie::make($cookieName, $history, 60 * 6));
+    }
+
+    private function GetHistory($cookieName) {
+        $cookie = Cookie::get($cookieName);
+        if (strlen($cookie) == 0) {
+            return ["No history!"];
+        }
+        return explode(';', $cookie);
+    }
 }
+

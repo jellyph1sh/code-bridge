@@ -96,4 +96,9 @@ body, html {
           <input class="submit-btn" type="submit" value="Convert" wire:click="convert">
           <input class="input_button_2" placeholder="Resultat" type="text" name="result" wire:model="result">
         </div>
+        <div class="history">
+          @for ($i = 0; $i < count($history); $i++)
+            <li>{{ $history[$i] }}</li>
+          @endfor
+        </div>
     </div>

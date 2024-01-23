@@ -22,10 +22,9 @@ class TextGenerator extends Component
         $this->result = "";
         $this->error = "";
     
-        $filePath = ("storage\app\public\dico.txt");
-    
-        if (Storage::exists($filePath)) {
-            $words = file($filePath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+        if (Storage::disk('local')->exists('public/dico.txt')) {
+            $words = Storage::disk('local')->get('public/dico.txt');
+            $words = explode("\n", $words);
     
             $numberOfWord = $this->numberOfWord;
     

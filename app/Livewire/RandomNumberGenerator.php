@@ -19,12 +19,13 @@ class RandomNumberGenerator extends Component
 
     public function generateRandomNumber()
     {
+        $this->validate([
+            'max' => 'required|numeric',
+            'min' => 'required|numeric',
+        ]);
+        
         $this->error = null;
-        if ($this->min == null || $this->max == null) {
-            $this->error = "[ERROR] Max and min value can't be null.";
-            $this->number = null;
-            return;
-        }
+        
         if ($this->min > $this->max) {
             $this->error = "[ERROR] The minimum value cannot be greater than the maximum value.";
             $this->number = null;

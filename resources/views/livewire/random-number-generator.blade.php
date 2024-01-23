@@ -14,11 +14,11 @@
         <input id="max" type="number" value="{{ $max }}" wire:model="max">
     </div>
     <p>{{ $number }}</p>
-    @if($errors->has('min'))
-        <span>{{ $errors->first('min') }}</span>
-    @endif
-    @if($errors->has('max'))
-        <span>{{ $errors->first('max') }}</span>
-    @endif
+    @error('min')
+        <div>Min value can't be null.</div>
+    @enderror
+    @error('max')
+        <div>Max value can't be null.</div>
+    @enderror
     <p>{{ $error }}</p>
 </div>

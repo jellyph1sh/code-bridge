@@ -155,31 +155,42 @@ class BinaryConverter extends Component
             case 2:
                 $this -> result = $this->base2($this->input, $this->base_2);
                 $this->error = $this->result[1];
-                $this->AddToHistory('BINARY_HISTORY', $this->result[0]);
+                if ($this->error == null) {
+                    $this->AddToHistory('BINARY_HISTORY', $this->result[0]);
+                }
                 $this->result = $this->result[0];
                 break;
             case 8 :
                 $this->result = $this->base8($this->input, $this->base_2);
                 $this->error = $this->result[1];
-                $this->AddToHistory('BINARY_HISTORY', $this->result[0]);
+                if ($this->error == null) {
+                    $this->AddToHistory('BINARY_HISTORY', $this->result[0]);
+                }
                 $this->result = $this->result[0];
                 break;
             case 10 :
                 $this->result = $this->base10($this->input, $this->base_2);
                 $this->error = $this->result[1];
-                $this->AddToHistory('BINARY_HISTORY', $this->result[0]);
+                if ($this->error == null) {
+                    $this->AddToHistory('BINARY_HISTORY', $this->result[0]);
+                }
                 $this->result = $this->result[0];
                 break;
             case 16 :
                 $this->result = $this->base16($this->input, $this->base_2);
                 $this->error = $this->result[1];
-                $this->AddToHistory('BINARY_HISTORY', $this->result[0]);
+                if ($this->error == null) {
+                    $this->AddToHistory('BINARY_HISTORY', $this->result[0]);
+                }
                 $this->result = $this->result[0];
                 break;
             case 64 :
                 $this->result = $this->base64($this->input, $this->base_2);
                 $this->error = $this->result[1];
-                $this->AddToHistory('BINARY_HISTORY', $this->result[0]);
+                if ($this->error == null) {
+                    $this->AddToHistory('BINARY_HISTORY', $this->result[0]);
+                }
+                
                 $this->result = $this->result[0];
                 break;
         }

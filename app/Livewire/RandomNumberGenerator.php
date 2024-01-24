@@ -36,13 +36,13 @@ class RandomNumberGenerator extends Component
         }
 
         $this->result = rand($this->min,$this->max);
-        $this->AddToHistory('TEXT_HISTORY', strval($this->result));
+        $this->AddToHistory('NUMBER_HISTORY', strval($this->result));
         $this->number = $this->result;
     }
 
     public function render()
     {
-        $this->history = $this->GetHistory('TEXT_HISTORY');
+        $this->history = $this->GetHistory('NUMBER_HISTORY');
         return view('livewire.random-number-generator');
     }
 

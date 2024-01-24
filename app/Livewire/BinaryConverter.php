@@ -15,8 +15,15 @@ class BinaryConverter extends Component
     public $error = "";
     public $history;
 
+    
+
     public function base2($input, $base_2) 
     {   
+
+        $this->validate([
+            'input' => 'required|numeric|min:0|max:100000000',
+        ]);
+
         if ($this->base_1 == 2 && !(preg_match('/^[01]+$/', $this->input)))
             return ["","Error: Input is not a binary number"];
         switch ($base_2) {
@@ -40,6 +47,9 @@ class BinaryConverter extends Component
 
     public function base8($input, $base_2)
     {
+        $this->validate([
+            'input' => 'required|numeric|min:0|max:100000000',
+        ]);
         if ($this->base_1 == 8 && !(preg_match('/^[0-7]+$/', $this->input)))
                 return ["","Error: Input is not an octal number"];
         switch ($base_2) {
@@ -63,6 +73,9 @@ class BinaryConverter extends Component
 
     public function base10($input, $base_2)
     {   
+        $this->validate([
+            'input' => 'required|numeric|min:0|max:100000000',
+        ]);
         if ($this->base_1 == 10 && !(preg_match('/^[0-9]+$/', $this->input)))
                 return ["","Error: Input is not a decimal number"];
         switch ($base_2) {
@@ -86,6 +99,9 @@ class BinaryConverter extends Component
 
     public function base16($input, $base_2)
     {   
+        $this->validate([
+            'input' => 'required|numeric|min:0|max:100000000',
+        ]);
         if ($this->base_1 == 16 && !(preg_match('/^[0-9A-Fa-f]+$/', $this->input)))
                 return ["","Error: Input is not a hexadecimal number"];
         switch ($base_2) {
@@ -109,6 +125,9 @@ class BinaryConverter extends Component
 
     public function base64($input, $base_2)
     {   
+        $this->validate([
+            'input' => 'required|numeric|min:0|max:100000000',
+        ]);
         if ($this->base_1 == 64 && !(preg_match('/^[0-9A-Za-z\/\+]+$/', $this->input)))
                 return ["","Error: Input is not a base64 number"];
         switch ($base_2) {

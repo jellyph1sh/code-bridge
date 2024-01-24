@@ -10,7 +10,7 @@
     background-color: #0f3e70;
     color: rgb(255, 255, 255);
     width: 100%;
-    padding: 20px;
+    padding: 20px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -26,7 +26,7 @@
   
   .dropdown {
     margin-right: 60%;
-    padding: 10px;
+    padding: 10px 0;
     border: 1px solid #000000;
     border-radius: 5px;
     font-size: 16px;

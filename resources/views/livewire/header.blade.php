@@ -25,7 +25,9 @@
   }
   
   .dropdown {
-    margin-right: 60%;
+    display: flex;
+    margin-right: 42%;
+
     padding: 10px 0;
     border: 1px solid #000000;
     border-radius: 5px;
@@ -46,7 +48,7 @@
   </style>
      <header>
           <div class = "logo">
-            Logo
+            <img src="{{url('/code_bridge_logo.png')}}" width = "80px" height = "80px" alt = "logo">
           </div>
           <select class = "dropdown" wire:model = "selectedValue" wire:change="changePage($event.target.value)">
             <option value = "" disabled selected>Fonctionnalités</option>
